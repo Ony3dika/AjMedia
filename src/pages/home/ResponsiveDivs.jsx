@@ -39,7 +39,7 @@ const ResponsiveDivs = () => {
 			id: 4,
 			content: (
 				<>
-					<img src={Slide3} alt=' slide 3' />
+					<img src={Slide3} alt='slide 3' />
 				</>
 			),
 		},
@@ -76,24 +76,28 @@ const ResponsiveDivs = () => {
 				</p>
 			</div>
 			{/* Desktop View */}
-			<div className='hidden md:flex justify-between mx-6 space-x-4 '>
+			<div className='hidden md:flex justify-between mx-6 space-x-4'>
 				{divs.map((div) => (
 					<div key={div.id}>{div.content}</div>
 				))}
 			</div>
 
 			{/* Mobile View */}
-			<div className='flex md:hidden justify-center w-374 h-279 items-center mx-4 '>
+			<div className='relative flex md:hidden justify-center items-center mx-4'>
 				<button
 					onClick={prevDiv}
 					className='absolute left-0 bg-gray-300 hover:bg-gray-400 rounded-full p-2 m-2'
+					aria-label='Previous'
 				>
 					&lt;
 				</button>
-				<div>{divs[currentDiv].content}</div>
+				<div className='flex justify-center items-center w-full'>
+					<div className='w-2/3'>{divs[currentDiv].content}</div>
+				</div>
 				<button
 					onClick={nextDiv}
 					className='absolute right-0 bg-gray-300 hover:bg-gray-400 rounded-full p-2 m-2'
+					aria-label='Next'
 				>
 					&gt;
 				</button>
