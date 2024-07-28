@@ -1,4 +1,5 @@
 import Navbar from "./components/navbar";
+import ResponsiveDivs from "./pages/home/ResponsiveDivs";
 import Email from "./pages/home/email";
 import Hero from "./pages/home/hero";
 function App() {
@@ -7,6 +8,7 @@ function App() {
       <Navbar />
       <Hero/>
       <Email/>
+      <ResponsiveDivs />
     </main>
   );
 }
